@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useLocation } from "wouter";
 import { motion, AnimatePresence } from "framer-motion";
 import confetti from "canvas-confetti";
-import envelopeImg from "@assets/generated_images/cute_closed_envelope_illustration.png";
+import envelopeImg from "@assets/generated_images/pink_envelope.png";
 import { Button } from "@/components/ui/button";
 
 export default function Landing() {
@@ -82,7 +82,7 @@ export default function Landing() {
                 animate={{ scale: [1, 1.1, 1] }}
                 transition={{ duration: 2, repeat: Infinity }}
               >
-                <span className="text-purple-800 font-bold tracking-wider">TAP TO OPEN</span>
+                <span className="text-purple-800 font-bold tracking-wider">Open Me!</span>
               </motion.div>
             </motion.div>
 
