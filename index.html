@@ -1,27 +1,158 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+<head>
+  <meta charset="UTF-8" />
+  <title>Happy 18th Birthday Arham 🎉</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <meta property="og:title" content="Happy 18th Birthday Arham!" />
-    <meta property="og:description" content="A special birthday surprise for Arham." />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://replit.com/public/images/opengraph.png" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@replit" />
-    <meta name="twitter:title" content="Happy 18th Birthday Arham!" />
-    <meta name="twitter:description" content="A special birthday surprise for Arham." />
-    <meta name="twitter:image" content="https://replit.com/public/images/opengraph.png" />
+  <!-- Social preview -->
+  <meta property="og:title" content="Happy 18th Birthday Arham!" />
+  <meta property="og:description" content="A special birthday surprise made just for you." />
+  <meta property="og:type" content="website" />
 
-    <link rel="icon" type="image/png" href="/favicon.png" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <!-- Fonts: 'Outfit' for UI, 'Patrick Hand' for the letter, 'Fredoka' for headers -->
-    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Outfit:wght@100..900&family=Patrick+Hand&display=swap" rel="stylesheet">
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Outfit:wght@100..900&family=Patrick+Hand&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Outfit', sans-serif;
+      min-height: 100vh;
+      background: radial-gradient(circle at top, #2b1055, #0f0520);
+      color: white;
+      overflow-x: hidden;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    h1 {
+      font-family: 'Fredoka', sans-serif;
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      font-family: 'Patrick Hand', cursive;
+      font-size: 1.6rem;
+      opacity: 0.9;
+    }
+
+    .card {
+      margin-top: 50px;
+      padding: 40px;
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 20px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+      backdrop-filter: blur(10px);
+    }
+
+    .letter {
+      font-family: 'Patrick Hand', cursive;
+      font-size: 1.4rem;
+      line-height: 1.8;
+      margin-top: 20px;
+    }
+
+    .button {
+      margin-top: 40px;
+      padding: 14px 32px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 999px;
+      cursor: pointer;
+      background: linear-gradient(135deg, #ff5fa2, #7b5cff);
+      color: white;
+      font-weight: 600;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .cards {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      margin-top: 30px;
+      flex-wrap: wrap;
+    }
+
+    .pick-card {
+      width: 160px;
+      height: 220px;
+      background: linear-gradient(135deg, #ff8ccf, #9b6bff);
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Fredoka', sans-serif;
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .pick-card:hover {
+      transform: rotate(-2deg) scale(1.05);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Happy 18th Birthday 🎉</h1>
+    <h2>Welcome to your special corner of the internet, Arham 💫</h2>
+
+    <div class="card">
+      <p class="letter">
+        Hey you,<br><br>
+        Welcome to adulthood (don’t panic 😌).  
+        This is just a small digital hug to remind you how loved,
+        appreciated, and celebrated you are today.<br><br>
+
+        May this year bring you confidence, laughter, chaos in the fun way,
+        and moments you’ll look back on and smile at.
+      </p>
+
+      <button class="button" onclick="showCards()">Next ✨</button>
+    </div>
+
+    <div id="pick" class="hidden">
+      <h2 style="margin-top:50px;">Pick one card 👀</h2>
+      <div class="cards">
+        <div class="pick-card" onclick="reveal()">Card 1</div>
+        <div class="pick-card" onclick="reveal()">Card 2</div>
+        <div class="pick-card" onclick="reveal()">Card 3</div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function showCards() {
+      document.getElementById("pick").classList.remove("hidden");
+      window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
+    }
+
+    function reveal() {
+      alert("RYUJIN BETTER 😌💥");
+    }
+  </script>
+</body>
 </html>
